@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { AuthProvider, useAuth } from '../app/contexts/AuthContext';
 import '../app/styles/layout.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Menu({ children }) {  // Añade children como prop
   const pathname = usePathname();

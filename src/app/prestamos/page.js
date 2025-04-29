@@ -45,7 +45,7 @@ const PrestamosContent = () => {
     { 
       key: 'usuarioDocumento',
       label: 'Documento',
-      render: (usuario) => usuario?.documento || 'N/A'
+      render: (_valor, item) => item.usuario?.documento || 'N/A'
     },
     { 
       key: 'libro',

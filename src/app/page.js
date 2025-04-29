@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 //import '../styles/inicio.css';
+import '../app/styles/inicio.css';
 //import PrivateRoute from '../../app/components/PrivateRoute';
 import PrivateRoute from './components/PrivateRoute';
 

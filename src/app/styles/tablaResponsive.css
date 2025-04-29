@@ -1,0 +1,90 @@
+/* Contenedor principal */
+.responsive-table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Estilos para la vista móvil (cards) */
+  .mobile-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mobile-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+  }
+  
+  .mobile-card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .mobile-card-label {
+    font-weight: 600;
+    color: #555;
+    margin-right: 1rem;
+  }
+  
+  .mobile-card-value {
+    text-align: right;
+    word-break: break-word;
+    flex: 1;
+  }
+  
+  .mobile-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  /* Estilos para la paginación responsive */
+  .pagination {
+    flex-wrap: wrap;
+  }
+  
+  /* Ajustes para móvil */
+  @media (max-width: 768px) {
+    .mobile-cards-container {
+      padding: 0.5rem;
+    }
+    
+    .mobile-card {
+      padding: 0.8rem;
+    }
+    
+    .mobile-card-actions .btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .items-per-page {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  
+  /* Ajustes para desktop */
+  @media (min-width: 769px) {
+    .actions-cell {
+      white-space: nowrap;
+    }
+  }

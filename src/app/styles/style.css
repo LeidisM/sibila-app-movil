@@ -1,0 +1,21 @@
+/* Estilos para botones */
+.btn-primary {
+    background-color: #6bbf3d;
+    border-color: #6bbf3d;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5aa62d;
+    border-color: #5aa62d;
+  }
+  
+  .btn-outline-primary {
+    color: #6bbf3d;
+    border-color: #6bbf3d;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #6bbf3d;
+    color: white;
+  }

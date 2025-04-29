@@ -58,6 +58,22 @@
   .pagination {
     flex-wrap: wrap;
   }
+
+  .page-item.active .page-link {
+    background-color: #6bbf3d;
+    border-color: #6bbf3d;
+    color: white;
+  }
+  
+  .page-link {
+    color: #6bbf3d;
+    border-color: #6bbf3d;
+  }
+  
+  .page-link:hover {
+    background-color: #6bbf3d;
+    color: white;
+  }
   
   /* Ajustes para móvil */
   @media (max-width: 768px) {

@@ -72,12 +72,12 @@ const TablaResponsive = ({
                 </button>
               ))}
               {acciones.ver && (
-                <button className="btn btn-sm btn-outline-info me-1" onClick={() => acciones.ver(item[uniqueKey])}>
+                <button className="btn btn-sm btn-outline-primary me-1" onClick={() => acciones.ver(item[uniqueKey])}>
                   <i className="fas fa-eye"></i> Ver
                 </button>
               )}
               {acciones.editar && (
-                <button className="btn btn-sm btn-outline-warning me-1" onClick={() => acciones.editar(item[uniqueKey])}>
+                <button className="btn btn-sm btn-outline-secondary me-1" onClick={() => acciones.editar(item[uniqueKey])}>
                   <i className="fas fa-edit"></i> Editar
                 </button>
               )}
@@ -113,13 +113,23 @@ const TablaResponsive = ({
               ))}
               {(acciones.ver || acciones.editar || acciones.eliminar) && (
                 <td className="actions-cell">
+                  {acciones.custom?.map((action, index) => (
+                    <button
+                      key={index}
+                      className={`btn btn-sm ${action.className || 'btn-outline-secondary'} me-1`}
+                      onClick={() => action.handler(item[uniqueKey])}
+                    >
+                      {action.icon && <i className={`fas ${action.icon} me-1`}></i>}
+                      {isMobile ? action.label : null}
+                    </button>
+                  ))}
                   {acciones.ver && (
-                    <button className="btn btn-sm btn-outline-info me-1" onClick={() => acciones.ver(item[uniqueKey])}>
+                    <button className="btn btn-sm btn-outline-primary me-1" onClick={() => acciones.ver(item[uniqueKey])}>
                       <i className="fas fa-eye"></i>
                     </button>
                   )}
                   {acciones.editar && (
-                    <button className="btn btn-sm btn-outline-warning me-1" onClick={() => acciones.editar(item[uniqueKey])}>
+                    <button className="btn btn-sm btn-outline-secondary me-1" onClick={() => acciones.editar(item[uniqueKey])}>
                       <i className="fas fa-edit"></i>
                     </button>
                   )}

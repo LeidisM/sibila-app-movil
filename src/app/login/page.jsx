@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/contexts/AuthContext';
 import api from '@/app/components/Api'; // Ajusta la ruta de acuerdo a tu estructura
 import { Button, Form, Alert } from 'react-bootstrap';
+import '../../app/styles/style.css'
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -87,7 +88,7 @@ export default function Login() {
 
                 <div className="d-grid gap-2">
                   <Button
-                    variant="primary"
+                    className="btn btn-primary"
                     type="submit"
                     disabled={loading}
                   >

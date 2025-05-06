@@ -89,79 +89,20 @@ function Menu({ children }) {  // Añade children como prop
 }
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="es">
-      <body>
-        <AuthProvider>
-          <Menu>{children}</Menu>  {/* Pasa children al componente Menu */}
-        </AuthProvider>
-      </body>
-    </html>
-  );
-}
-
-/*
-// app/layout.js
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { AuthProvider, useAuth } from '../app/contexts/AuthContext';
-import '../app/styles/layout.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-function Menu() {
   const pathname = usePathname();
-  const router = useRouter();
-  const { user, logout } = useAuth();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const isAuthRoute = ['/login', '/registro'].includes(pathname);
 
-  const handleLogout = () => {
-    logout(() => router.push('/login'));
-  };
-
-  return (
-    <div className="layout-wrapper">
-      <aside className={`sidebar ${menuOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <h2>Sibila App</h2>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-          </button>
-        </div>
-        <nav className="sidebar-nav">
-          <Link href="/" className={`sidebar-link ${pathname === '/' ? 'active' : ''}`}>🏠 Inicio</Link>
-          <Link href="/usuarios" className={`sidebar-link ${pathname.startsWith('/usuarios') ? 'active' : ''}`}>👥 Usuarios</Link>
-          <Link href="/libros" className={`sidebar-link ${pathname.startsWith('/libros') ? 'active' : ''}`}>📚 Libros</Link>
-          <Link href="/prestamos" className={`sidebar-link ${pathname.startsWith('/prestamos') ? 'active' : ''}`}>🔁 Préstamos</Link>
-          <Link href="/devoluciones" className={`sidebar-link ${pathname.startsWith('/devoluciones') ? 'active' : ''}`}>↩️ Devoluciones</Link>
-        </nav>
-        {user && (
-          <div className="logout-container">
-            <button onClick={handleLogout} className="logout-btn">
-              🔒 Cerrar Sesión
-            </button>
-          </div>
-        )}
-      </aside>
-    </div>
-  );
-}
-
-export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
         <AuthProvider>
-          <div className="layout-wrapper">
-            <Menu />
-            <main className="main-content">
-              <div className="content-container">{children}</div>
-            </main>
-          </div>
+          {isAuthRoute ? (
+            children
+          ) : (
+            <Menu>{children}</Menu>
+          )}
         </AuthProvider>
       </body>
     </html>
   );
 }
-*/
